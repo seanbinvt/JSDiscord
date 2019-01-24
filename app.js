@@ -1,33 +1,77 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js-commando');
 const client =  new Discord.Client();
 const config = require("./config.json")
+const prefix = "!";
+const fs = require("fs");
 
-client.on('ready', (message) => {
-  console.log('I am ready!');
-  const attachment = new MessageAttachment('https://78.media.tumblr.com/ea94fa4a4f00974405895b6a9fcefb32/tumblr_inline_o1l3e0IpPd1sck31p_500.gif');
-  // This event triggers when the bot joins a guild.
-  message.channel.send(attachment);
+client.registry.registerGroup('simple', 'Simple');
+client.registry.registerCommandsIn(__dirname + "/commands");
+
+client.on("ready", () => {
+  client.user.setStatus('available')
+    client.user.setPresence({
+        game: {
+            name: 'snoz is gay',
+            /*
+            type: "STREAMING",
+            url: "https://www.twitch.tv/monstercat"
+            */
+        }
+    });
 });
-
-  client.on("message", async message => {
-  console.log(message + ' - heard');
-    // This event will run on every single message received, from any channel or DM.
-    
+/*
+  client.on("message", function(message) {
     // It's good practice to ignore other bots. This also makes your bot ignore itself
     // and not get into a spam loop (we call that "botception").
     if(message.author.bot) return;
     
-    // Also good practice to ignore any message that does not start with our prefix, 
-    // which is set in the configuration file.
-    if(message.content.indexOf(config.prefix) !== 0) return;
     //split message into array
-  const args = message.content.slice(config.prefix.length).trim().split(/ !/g);
-  const command = args[0].toLowerCase();
-  const name = args[1];
 
-  if(command=="roast") {
-    message.channel.send(`${name} is a bitch`);
+
+  else if(message.content.startsWith(prefix + "roast")) {
+    message.reply ('bling bling lookin ass boy');
   }
-  });
 
+  else if(message.content.startsWith(prefix + "execute")) {
+    message.channel.send({file: "https://78.media.tumblr.com/ea94fa4a4f00974405895b6a9fcefb32/tumblr_inline_o1l3e0IpPd1sck31p_500.gif"})
+  }
+
+  else if(message.content.startsWith(prefix +"voice")) {
+
+    if(message.member.voiceChannel) {
+      if(message.guild.voiceConnection) {
+          message.member.voiceChannel.join()
+              .then(connection => {
+                  message.reply("I joined bitch");
+              })
+      }
+
+      else if(message.content.startsWith(prefix +"ae")) {
+        app.listen('8081')
+
+console.log('Magic happens on port 8081');
+
+exports = module.exports = app;
+
+  } else {
+      message.reply("Go in a voice channel then");
+  }        
+}
+}
+/*
+  else if(message.author.id.toString() == "201905314516172800") {
+    message.channel.send("Goblin is a bitch.");
+  }
+
+else {
+  const comWords = ["canada", "canadian", "commie", "communist"];
+  for(var i=0; i < comWords.length; i++) {
+    if(message.content.toString().toLowerCase().includes(comWords[i])) {
+      message.channel.send(comWords[i] + "?", {file: "https://www.tldm.org/news2/communist-infiltrators.jpg"})
+    break;
+    }
+  }
+}
+  });
+*/
 client.login(config.token);

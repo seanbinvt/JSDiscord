@@ -1,0 +1,9 @@
+!roast
+
+!execute
+
+!anon (message)
+    Deletes posted message and bot posts that message.
+
+!rng (max number)
+    Generates a number between 0 and the given max number.
