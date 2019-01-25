@@ -1,17 +1,17 @@
-const Discord = require('discord.js-commando');
-const client =  new Discord.Client();
+const Commando = require('discord.js-commando');
+const bot =  new Commando.Client();
 const config = require("./config.json")
 const prefix = "!";
-const fs = require("fs");
 
-client.registry.registerGroup('simple', 'Simple');
-client.registry.registerCommandsIn(__dirname + "/commands");
+bot.registry.registerGroup('simple', 'Simple');
+bot.registry.registerDefaults();
+bot.registry.registerCommandsIn(__dirname + "/commands");
 
-client.on("ready", () => {
-  client.user.setStatus('available')
-    client.user.setPresence({
+bot.on("ready", () => {
+  bot.user.setStatus('available')
+  bot.user.setPresence({
         game: {
-            name: 'snoz is gay',
+            name: '!help | Snoz big gay',
             /*
             type: "STREAMING",
             url: "https://www.twitch.tv/monstercat"
@@ -19,8 +19,9 @@ client.on("ready", () => {
         }
     });
 });
-/*
-  client.on("message", function(message) {
+
+  bot.on("message", function(message) {
+    /*
     // It's good practice to ignore other bots. This also makes your bot ignore itself
     // and not get into a spam loop (we call that "botception").
     if(message.author.bot) return;
@@ -72,6 +73,7 @@ else {
     }
   }
 }
-  });
 */
-client.login(config.token);
+  });
+
+bot.login(config.token);

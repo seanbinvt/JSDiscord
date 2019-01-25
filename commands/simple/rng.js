@@ -1,6 +1,6 @@
-    const Discord = require('discord.js-commando');
+const Commando = require('discord.js-commando');
 
-class AnonCommand extends Discord.Command {
+class RngCommand extends Commando.Command {
     constructor(client) {
     super(client,{
         name:'rng',
@@ -14,5 +14,4 @@ class AnonCommand extends Discord.Command {
 }
 }
 
-module.exports = AnonCommand;
-client.login(config.token);
+module.exports = RngCommand;

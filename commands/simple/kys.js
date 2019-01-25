@@ -1,18 +1,17 @@
 const Commando = require('discord.js-commando');
 
-class AnonCommand extends Commando.Command {
+class KysCommand extends Commando.Command {
     constructor(client) {
     super(client,{
-        name:'anon',
+        name: 'kys',
         group: 'simple',
-        memberName: 'anon',
+        memberName: 'kys',
         description: "Tells bot to say whatever the user said then deleting the user's message"
     });
     }
     async run(message, args) {
-      message.delete();
-      message.channel.send(args);
+      message.channel.send("Badman is a dirty wanker and should kys")
 }
 }
 
-module.exports = AnonCommand;
+module.exports = KysCommand;
