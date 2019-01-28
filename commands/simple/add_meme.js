@@ -7,7 +7,7 @@ class AddMemeCommand extends Commando.Command {
             name:'addmeme',
             group: 'simple',
             memberName: 'addmeme',
-            description: "Add random video to memelist."
+            description: "Add random video to memelist.",
         });
         }
         async run(message, args) {
@@ -18,7 +18,6 @@ class AddMemeCommand extends Commando.Command {
             var vidArray = fs.readFileSync(__dirname + '/memes.txt', 'utf-8').split('\n');
             var con = true;
             for(var i = 0; i <= vidArray.length; i++) {
-                console.log(i);
                 if(input === vidArray[i]) {
                     message.reply("Sorry, this video is already added.");
                     con = false;

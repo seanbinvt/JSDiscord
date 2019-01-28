@@ -4,6 +4,7 @@ const config = require("./config.json")
 const prefix = "!";
 
 bot.registry.registerGroup('simple', 'Simple');
+bot.registry.registerGroup('aecommands', 'AeCommands');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
 

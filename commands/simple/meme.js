@@ -9,16 +9,6 @@ class MemeCommand extends Commando.Command {
         group: 'simple',
         memberName: 'meme',
         description: "Get random video meme.",
-        args: [
-          {
-              prompt: 'What is the maximum number you wish to appear?',
-              type: 'string',
-              validate: text => {
-                  if (text.length < 10) return true;
-                  return 'pick a smaller number you dyke';
-              }
-          }
-      ]
     });
     }
     async run(message) {

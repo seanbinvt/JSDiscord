@@ -9,9 +9,13 @@
   "author": "Sean Blevins",
   "license": "ISC",
   "dependencies": {
+    "chromedriver": "^2.45.0",
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "ffmpeg-binaries": "^4.0.0",
-    "opusscript": "0.0.6"
+    "geckodriver": "^1.14.1",
+    "opusscript": "0.0.6",
+    "puppeteer": "^1.11.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
