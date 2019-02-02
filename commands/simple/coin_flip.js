@@ -12,7 +12,7 @@ class CoinFlipCommand extends Commando.Command {
     async run(message, args) {
         var chance = Math.floor(Math.random() *2);
         if(chance == 0) {
-            MessageChannel.reply('Your could landed heads.');
+            message.reply('Your coin landed heads.');
         } else {
             message.reply('Your coin landed tails.');
         }

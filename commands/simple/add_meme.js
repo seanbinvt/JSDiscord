@@ -26,6 +26,7 @@ class AddMemeCommand extends Commando.Command {
             }
             if (con == true) {
                 fs.appendFileSync(__dirname + '/memes.txt', '\n' + input, 'utf-8');
+                message.reply("Added.");
             }
         
 }
