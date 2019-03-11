@@ -3,7 +3,7 @@ const bot =  new Commando.Client();
 const config = require("./config.json")
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'http://sean-discord-bot-sean-discord-bot.1d35.starter-us-east-1.openshiftapps.com';
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '10.129.61.138';
  
 server.listen(server_port, server_ip_address, function () {
   console.log( "Listening on " + server_ip_address + ", port " + server_port )
