@@ -1,6 +1,4 @@
 # JSDiscord
 My personally developed DiscordJS bot. Using Commando command framework.
 
-As I become personally interested in different topics I will add different commands. Am most proud of the "aeCommands" sub-folder which is my first project in learning Puppeteer and web scraping in headless chrome/firefox. 
-
-3/6/2019 - May look into voice chat/reactions integration in near future.
+The purpose of this repository is to display my development and experience in the DiscordJS framework. Will update and add commands that utilize new technologies on the way.
